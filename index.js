@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer");
-const port = 3000;
+const port = 2222;
 const app = express();
 var fs = require("fs");
 app.use(express.urlencoded());
@@ -92,6 +92,6 @@ app.delete("/deleteFile", function (req, res) {
 });
 
 // port start
-app.listen(300420, () => {
+app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
