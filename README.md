@@ -1,16 +1,16 @@
 # chạy bằng npm :
 
-    <div>- npm init</div>
-    <div>- npm install</div>
-    <div>- npm install --save multer</div>
-    <div>- npm express multer body-parser --save</div>
-    <div>- npm nodemon</div>
-    <div>- npm ./index.js</div>
+   - npm init
+   - npm install
+   - npm install --save multer
+   - npm express multer body-parser --save
+   - npm nodemon
+   - npm ./index.js
 
 # chạy nhanh bằng yarn :
 
-    <div>- yarn install</div>
-    <div>- yarn run start</div>
+   - yarn install
+   - yarn run start
 
 # upload File
 
