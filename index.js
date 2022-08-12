@@ -13,20 +13,24 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     // tạo tên file = thời gian hiện tại nối với số ngẫu nhiên => tên file chắc chắn không bị trùng
-    const filename =
-      Date.now() +
-      "-" +
-      Math.round(Math.random() * 1e9) +
-      "-" +
-      Math.round(Math.random() * 1e9) +
-      "-" +
-      Math.round(Math.random() * 1e9);
+    const filename = Date.now() + randomKey(50)
 
     let reverse_str = file.originalname.split("").reverse().join("");
     let newString = reverse_str.slice(0, reverse_str.indexOf(".") + 1);
     cb(null, filename + newString.split("").reverse().join(""));
   },
 });
+
+function randomKey(length) {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
 //Khởi tạo middleware với cấu hình trên, lưu trên local của server khi dùng multer
 const upload = multer({ storage: storage });
 
